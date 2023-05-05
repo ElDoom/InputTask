@@ -56,10 +56,20 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\XRPlatformControllerSetup.cs" />
+    <Compile Include="Assets\Action Scripts\V01\Move.cs" />
     <Compile Include="Assets\Action.cs" />
-    <Compile Include="Assets\Action Scripts\Jump.cs" />
-    <Compile Include="Assets\Action Scripts\Move.cs" />
+    <Compile Include="Assets\Action Scripts\V01\Press.cs" />
+    <Compile Include="Assets\Action Scripts\V01\CompositeAction.cs" />
+    <Compile Include="Assets\XRPlatformControllerSetup.cs" />
+    <Compile Include="Assets\InputSearchAttribute.cs" />
+    <Compile Include="Assets\InputSearchUsageExample.cs" />
+    <Compile Include="Assets\CapsuleExample.cs" />
+    <Compile Include="Assets\Action Scripts\V01\ActionGroup.cs" />
+    <Compile Include="Assets\Action Scripts\InputActions.cs" />
+    <Compile Include="Assets\Action Scripts\InputActionPress.cs" />
+    <Compile Include="Assets\Action Scripts\InputActionMove.cs" />
+    <Compile Include="Assets\CubeController.cs" />
+    <Compile Include="Assets\CubeControllerBlue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -662,14 +672,11 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
