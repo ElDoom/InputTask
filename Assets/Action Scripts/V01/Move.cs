@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SilverTrain.ActionEditor
 {
-    [CreateAssetMenu(menuName = "Action/Move Action")]
+    [CreateAssetMenu(menuName = "Action/DontUse-Move Action")]
     public class Move : Action
     {
         //List<Input> inputs;

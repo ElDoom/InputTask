@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SilverTrain.ActionEditor
 {
-    [CreateAssetMenu(menuName = "Action/Action Group")]
+    [CreateAssetMenu(menuName = "Action/DontUse-Action Group")]
     public class ActionGroup : Action
     {
         public Move[] moveActions = null;

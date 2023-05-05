@@ -10,7 +10,7 @@ namespace SilverTrain.ActionEditor
     /// InputActions class generates ScriptableObjects that handle move and press 
     /// actions, can be attached to any object to 
     /// </summary>
-    [CreateAssetMenu(menuName = "Action/Input Action Group*")]
+    [CreateAssetMenu(menuName = "Action/Input Action Group")]
     public class InputActions : ScriptableObject
     {
         #region Private Variables

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SilverTrain.ActionEditor
 {
 
-    [CreateAssetMenu(menuName = "Action/Press Action")]
+    [CreateAssetMenu(menuName = "Action/DontUse-Press Action")]
     public class Press : Action
     {
 

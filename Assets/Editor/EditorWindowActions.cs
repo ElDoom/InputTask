@@ -5,16 +5,24 @@ using UnityEditor;
 
 namespace SilverTrain.ActionEditor
 {
+    /// <summary>
+    /// Generates a Window to Edit the actions
+    /// </summary>
     public class EditorWindowActions : EditorWindow
     {
-        protected SerializedObject serializedObject;
-        protected SerializedProperty serializedProperty;
+        #region Protected Variables
+        protected SerializedObject m_serializedObject;
 
+        protected SerializedProperty m_serializedProperty;
+        
         protected InputActions[] actionsToEdit;
+        
         protected string selectedPropertyPach;
+        
         protected string selectedProperty;
+        #endregion
 
-
+        #region Main Methods
         [MenuItem("Tool/Input Editor")]
         protected static void ShowWindow()
         {
@@ -27,7 +35,7 @@ namespace SilverTrain.ActionEditor
         private void OnGUI()
         {
             actionsToEdit = GetActionInstances<InputActions>();
-            serializedObject = new SerializedObject(actionsToEdit[0]);
+            m_serializedObject = new SerializedObject(actionsToEdit[0]);
 
             EditorGUILayout.BeginHorizontal();
 
@@ -48,10 +56,10 @@ namespace SilverTrain.ActionEditor
                 {
                     if (actionsToEdit[i].ActionName == selectedProperty)
                     {
-                        serializedObject = new SerializedObject(actionsToEdit[i]);
-                        serializedProperty = serializedObject.GetIterator();
-                        serializedProperty.NextVisible(true);
-                        DrawProperties(serializedProperty);
+                        m_serializedObject = new SerializedObject(actionsToEdit[i]);
+                        m_serializedProperty = m_serializedObject.GetIterator();
+                        m_serializedProperty.NextVisible(true);
+                        DrawProperties(m_serializedProperty);
                     }
                 }
             }
@@ -74,11 +82,50 @@ namespace SilverTrain.ActionEditor
             Apply();
         }
 
+        protected void DrawProperties(SerializedProperty p)
+        {
+
+            while (p.NextVisible(false))
+            {
+                EditorGUILayout.PropertyField(p, true);
+
+            }
 
 
+        }
 
 
+        protected void DrawSliderBar(InputActions[] prop)
+        {
+            foreach (InputActions p in prop)
+            {
+                if (GUILayout.Button(p.ActionName))
+                {
+                    selectedPropertyPach = p.ActionName;
+                }
+            }
 
+            if (!string.IsNullOrEmpty(selectedPropertyPach))
+            {
+                selectedProperty = selectedPropertyPach;
+            }
+
+            if (GUILayout.Button("New Group of Actions"))
+            {
+                InputActions newActions = ScriptableObject.CreateInstance<InputActions>();
+                GenerateActionGroup newActionWindow = GetWindow<GenerateActionGroup>("New Group");
+                newActionWindow.newInputAction = newActions;
+
+            }
+        }
+
+        protected void Apply()
+        {
+            m_serializedObject.ApplyModifiedProperties();
+        }
+        #endregion
+
+        #region Utility Methods
         public static T[] GetActionInstances<T>() where T : InputActions
         {
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
@@ -114,52 +161,7 @@ namespace SilverTrain.ActionEditor
             }
             return a;
         }
+        #endregion
 
-
-
-
-
-        protected void DrawProperties(SerializedProperty p)
-        {
-
-            while (p.NextVisible(false))
-            {
-                EditorGUILayout.PropertyField(p, true);
-
-            }
-
-
-        }
-
-
-
-        protected void DrawSliderBar(InputActions[] prop)
-        {
-            foreach (InputActions p in prop)
-            {
-                if (GUILayout.Button(p.ActionName))
-                {
-                    selectedPropertyPach = p.ActionName;
-                }
-            }
-
-            if (!string.IsNullOrEmpty(selectedPropertyPach))
-            {
-                selectedProperty = selectedPropertyPach;
-            }
-
-            if (GUILayout.Button("New Group of Actions"))
-            {
-                InputActions newActions = ScriptableObject.CreateInstance<InputActions>();
-                GenerateActionGroup newActionWindow = GetWindow<GenerateActionGroup>("New Group");
-                newActionWindow.newInputAction = newActions;
-
-            }
-        }
-
-        protected void Apply()
-        {
-            serializedObject.ApplyModifiedProperties();
-        }
     }
 }

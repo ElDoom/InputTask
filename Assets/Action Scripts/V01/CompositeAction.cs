@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace SilverTrain.ActionEditor
 {
-    [CreateAssetMenu(menuName = "Action/Group of Inputs")]
+    [CreateAssetMenu(menuName = "Action/DontUse-Group of Inputs")]
     public class CompositeAction : Action
     {
 

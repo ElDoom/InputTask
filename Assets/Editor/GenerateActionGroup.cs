@@ -5,30 +5,43 @@ using UnityEditor;
 
 namespace SilverTrain.ActionEditor
 {
+    /// <summary>
+    /// Window to generate a new Action Group
+    /// It stores the action on "SilverbackResources" folder
+    /// </summary>
     public class GenerateActionGroup : EditorWindow
     {
-        private SerializedObject serializedObject;
-        private SerializedProperty serializedProperty;
+        #region Private Variables
+        private SerializedObject m_serializedObject;
+        
+        private SerializedProperty m_serializedProperty;
+        #endregion
 
-        protected InputActions[] inputActions;
+        #region Protected Variables
+        protected InputActions[] m_inputActions;
+        #endregion
+
+        #region Public Variables
         public InputActions newInputAction;
+        #endregion
 
+        #region Main Methods
         private void OnGUI()
         {
 
-            serializedObject = new SerializedObject(newInputAction);
-            serializedProperty = serializedObject.GetIterator();
-            serializedProperty.NextVisible(true);
-            DrawProperties(serializedProperty);
+            m_serializedObject = new SerializedObject(newInputAction);
+            m_serializedProperty = m_serializedObject.GetIterator();
+            m_serializedProperty.NextVisible(true);
+            DrawProperties(m_serializedProperty);
             if (GUILayout.Button("save"))
             {
-                inputActions = GetActionInstances<InputActions>();
+                m_inputActions = GetActionInstances<InputActions>();
                 
-                if (newInputAction.ActionName == null) newInputAction.ActionName = "ActionGroup" + (inputActions.Length + 1);
+                if (newInputAction.ActionName == null) newInputAction.ActionName = "ActionGroup" + (m_inputActions.Length + 1);
                 
                 if (!AssetDatabase.IsValidFolder("Assets/SilverbackResources")) AssetDatabase.CreateFolder("Assets", "SilverbackResources");
                 
-                AssetDatabase.CreateAsset(newInputAction, "Assets/SilverbackResources/ActionGroup" + (inputActions.Length + 1) + ".asset");
+                AssetDatabase.CreateAsset(newInputAction, "Assets/SilverbackResources/ActionGroup" + (m_inputActions.Length + 1) + ".asset");
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
                 Close();
@@ -43,11 +56,13 @@ namespace SilverTrain.ActionEditor
             while (p.NextVisible(false))
             {
                 EditorGUILayout.PropertyField(p, true);
-
             }
         }
 
+        protected void Apply() => m_serializedObject.ApplyModifiedProperties();
+        #endregion
 
+        #region Utility Methods
         public static T[] GetActionInstances<T>() where T : InputActions
         {
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
@@ -83,11 +98,8 @@ namespace SilverTrain.ActionEditor
             }
             return a;
         }
+        #endregion
 
-        protected void Apply()
-        {
-            serializedObject.ApplyModifiedProperties();
-        }
     }
 }
 
