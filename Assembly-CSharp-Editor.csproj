@@ -64,6 +64,9 @@
     <Compile Include="Assets\Editor\EditorWindowActions.cs" />
     <Compile Include="Assets\Editor\v01\InputSearchPopup.cs" />
     <Compile Include="Assets\Editor\v01\ActionWindow.cs" />
+    <Compile Include="Assets\Editor\GenerateAction.cs" />
+    <Compile Include="Assets\Editor\GenerateActionMove.cs" />
+    <Compile Include="Assets\Editor\GenerateActionPress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\v01\InputActionEditor.uxml" />

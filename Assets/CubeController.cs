@@ -20,8 +20,8 @@ namespace SilverTrain.ActionEditor
             }
 
             m_movement = m_inputActions.OnMove();
-            Vector3 actual = gameObject.transform.position+ m_movement;
-            gameObject.transform.position=actual ;
+            Vector3 actual = gameObject.transform.position+ Vector3.Scale(m_movement, new Vector3(0.001f,0.001f,0.001f));
+            gameObject.transform.position=actual;
         }
     }
 }

@@ -15,8 +15,20 @@ namespace SilverTrain.ActionEditor
 
         protected SerializedProperty m_serializedProperty;
         
-        protected InputActions[] actionsToEdit;
+        protected SerializedObject m_serializedObjectPress;
+
+        protected SerializedProperty m_serializedPropertyPress;
         
+        protected SerializedObject m_serializedObjectMove;
+
+        protected SerializedProperty m_serializedPropertyMove;
+
+        protected InputActions[] actionsToEdit;
+
+        protected InputActionPress[] pressActionsToEdit;
+        
+        protected InputActionMove[] moveActionsToEdit;
+
         protected string selectedPropertyPach;
         
         protected string selectedProperty;
@@ -37,13 +49,17 @@ namespace SilverTrain.ActionEditor
             actionsToEdit = GetActionInstances<InputActions>();
             m_serializedObject = new SerializedObject(actionsToEdit[0]);
 
+            pressActionsToEdit = GetPressInstances<InputActionPress>();
+            
+
             EditorGUILayout.BeginHorizontal();
 
-            EditorGUILayout.BeginVertical("box", GUILayout.MaxWidth(150), GUILayout.ExpandHeight(true));
+            EditorGUILayout.BeginVertical("box", GUILayout.MaxWidth(250), GUILayout.ExpandHeight(true));
 
-            EditorGUILayout.LabelField("Actions");
+            EditorGUILayout.LabelField("Actions", "Group Actions:");
 
             DrawSliderBar(actionsToEdit);
+            
 
             EditorGUILayout.EndVertical();
             EditorGUILayout.BeginVertical("box", GUILayout.ExpandHeight(true));
@@ -67,11 +83,34 @@ namespace SilverTrain.ActionEditor
             {
                 EditorGUILayout.LabelField("Select an item from the list");
             }
+            EditorGUILayout.LabelField("Edit Actions");
+            /*test*/
+            pressActionsToEdit = GetPressInstances<InputActionPress>();
+            m_serializedObject = new SerializedObject(pressActionsToEdit[0]);
+
+            DrawSliderBarPress(pressActionsToEdit);
+
             EditorGUILayout.EndVertical();
-            EditorGUILayout.BeginVertical("box", GUILayout.MaxWidth(150), GUILayout.ExpandHeight(true));
+            EditorGUILayout.BeginVertical("box", GUILayout.ExpandHeight(true));
 
-            EditorGUILayout.LabelField("TODO...");
-
+            EditorGUILayout.LabelField("Single Action Edit");
+            if (selectedProperty != null)
+            {
+                for (int i = 0; i < pressActionsToEdit.Length; i++)
+                {
+                    if (pressActionsToEdit[i].ActionName == selectedProperty)
+                    {
+                        m_serializedObject = new SerializedObject(pressActionsToEdit[i]);
+                        m_serializedProperty = m_serializedObject.GetIterator();
+                        m_serializedProperty.NextVisible(true);
+                        DrawProperties(m_serializedProperty);
+                    }
+                }
+            }
+            else
+            {
+                EditorGUILayout.LabelField("Select an item from the list");
+            }
             EditorGUILayout.LabelField("Processors...");
 
             EditorGUILayout.EndVertical();
@@ -110,12 +149,62 @@ namespace SilverTrain.ActionEditor
                 selectedProperty = selectedPropertyPach;
             }
 
+            EditorGUILayout.LabelField("Generate Actions");
+
             if (GUILayout.Button("New Group of Actions"))
             {
                 InputActions newActions = ScriptableObject.CreateInstance<InputActions>();
                 GenerateActionGroup newActionWindow = GetWindow<GenerateActionGroup>("New Group");
                 newActionWindow.newInputAction = newActions;
 
+            }
+
+            EditorGUILayout.LabelField("Simple Actions");
+            if (GUILayout.Button("New Move Action"))
+            {
+                InputActionMove newActionMove = ScriptableObject.CreateInstance<InputActionMove>();
+                GenerateActionMove newActionWindow = GetWindow<GenerateActionMove>("New Move Action");
+                newActionWindow.newInputActionMove = newActionMove;
+
+            }
+
+            if (GUILayout.Button("New Press Action"))
+            {
+                InputActionPress newActionPress = ScriptableObject.CreateInstance<InputActionPress>();
+                GenerateActionPress newActionWindow = GetWindow<GenerateActionPress>("New Press Action");
+                newActionWindow.newInputActionPress = newActionPress;
+
+            }
+        }
+
+        protected void DrawSliderBarMove(InputActionMove[] prop)
+        {
+            foreach (InputActionMove p in prop)
+            {
+                if (GUILayout.Button(p.ActionName))
+                {
+                    selectedPropertyPach = p.ActionName;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(selectedPropertyPach))
+            {
+                selectedProperty = selectedPropertyPach;
+            }
+        }
+        protected void DrawSliderBarPress(InputActionPress[] prop)
+        {
+            foreach (InputActionPress p in prop)
+            {
+                if (GUILayout.Button(p.ActionName))
+                {
+                    selectedPropertyPach = p.ActionName;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(selectedPropertyPach))
+            {
+                selectedProperty = selectedPropertyPach;
             }
         }
 

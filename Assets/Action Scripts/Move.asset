@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e289fdaed9a290a43bf35e8b45f3b2cb, type: 3}
   m_Name: Move
   m_EditorClassIdentifier: 
+  m_actionName: Red Cube Movement
+  m_InvertX: 0
+  m_InvertY: 0
+  m_Normalize: 0
+  m_Scale: 0
+  m_DeadZone: 1
+  m_ScaleFactor: {x: 20, y: 1}
+  m_DeadZoneValuesMin: {x: 0.125, y: 0}
+  m_DeadZoneValuesMax: {x: 1, y: 1}

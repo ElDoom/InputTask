@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9e5022976a11d4c9739541cae166ac, type: 3}
   m_Name: Press
   m_EditorClassIdentifier: 
-  m_keyBinds: 200000001a010000
+  m_actionName: Red Cube Button
+  m_keyBinds: 200000001a0100001b0100004a010000
+  m_AxisDeadZone: 0
+  m_Clamp: 0
+  m_Invert: 0
+  m_Normalize: 0
+  m_Scale: 0
+  m_DeadZoneValuesMin: {x: 0, y: 0}
+  m_DeadZoneValuesMax: {x: 1, y: 1}
+  m_ClampMin: 0
+  m_ClampMax: 0
