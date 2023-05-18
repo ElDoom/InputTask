@@ -17,7 +17,7 @@ MonoBehaviour:
   m_InvertY: 0
   m_Normalize: 0
   m_Scale: 0
-  m_DeadZone: 1
+  m_DeadZone: 0
   m_ScaleFactor: {x: 20, y: 1}
   m_DeadZoneValuesMin: {x: 0.125, y: 0}
   m_DeadZoneValuesMax: {x: 1, y: 1}

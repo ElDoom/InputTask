@@ -14,12 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_actionName: Red Cube Button
   m_keyBinds: 200000001a0100001b0100004a010000
+  m_Invert: 0
   m_AxisDeadZone: 0
   m_Clamp: 0
-  m_Invert: 0
-  m_Normalize: 0
   m_Scale: 0
+  m_Normalize: 0
   m_DeadZoneValuesMin: {x: 0, y: 0}
   m_DeadZoneValuesMax: {x: 1, y: 1}
   m_ClampMin: 0
   m_ClampMax: 0
+  onKey: 0
+  onKeyDown: 1
+  onkeyUp: 0
+  hold: 0
+  holdTime: 0.1
+  tap: 0
+  minTapTime: 0.5
+  multiTap: 0
+  tapCount: 2
+  maxTapSpacing: 0.4

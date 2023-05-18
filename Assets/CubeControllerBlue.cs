@@ -9,6 +9,9 @@ namespace SilverTrain.ActionEditor
         [SerializeField]
         private InputActionPress actions;
 
+        [SerializeField]
+        private const float INCREMENT = 0.001f;
+
         //GameObject gameObject;
         // Start is called before the first frame update
         void Start()
@@ -19,7 +22,7 @@ namespace SilverTrain.ActionEditor
 
         public void PressedButton() 
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+0.1f, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + INCREMENT, gameObject.transform.position.z);
         }
   
 

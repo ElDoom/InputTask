@@ -70,6 +70,7 @@
     <Compile Include="Assets\CubeController.cs" />
     <Compile Include="Assets\Action Scripts\V01\CompositeAction.cs" />
     <Compile Include="Assets\XRPlatformControllerSetup.cs" />
+    <Compile Include="Assets\Action Scripts\XRInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
