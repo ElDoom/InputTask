@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Action Scripts\InputActionMove.cs" />
     <Compile Include="Assets\Action Scripts\InputActionPress.cs" />
+    <Compile Include="Assets\Action Scripts\XRInput.cs" />
     <Compile Include="Assets\CapsuleExample.cs" />
     <Compile Include="Assets\InputSearchUsageExample.cs" />
     <Compile Include="Assets\Action Scripts\V01\Move.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="Assets\CubeController.cs" />
     <Compile Include="Assets\Action Scripts\V01\CompositeAction.cs" />
     <Compile Include="Assets\XRPlatformControllerSetup.cs" />
-    <Compile Include="Assets\Action Scripts\XRInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -25,11 +25,11 @@ MonoBehaviour:
   m_ClampMax: 0
   onKey: 0
   onKeyDown: 1
-  onkeyUp: 0
+  onKeyUp: 0
   hold: 0
-  holdTime: 0.1
+  holdTime: 0.3
   tap: 0
-  minTapTime: 0.5
+  maxTapTime: 0.5
   multiTap: 0
-  tapCount: 2
+  tapCount: 4
   maxTapSpacing: 0.4
