@@ -8,7 +8,7 @@ public class InputActionEditor : EditorWindow
 {
 
     //private Toggle 
-    [MenuItem("Tool/Dont Use- TEST-Input Action Editor")]
+    //[MenuItem("Tool/Dont Use- TEST-Input Action Editor")]
     public static void ShowWindow()
     {
         InputActionEditor window = GetWindow<InputActionEditor>();

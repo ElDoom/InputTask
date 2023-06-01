@@ -13,7 +13,7 @@ public class ActionWindow : EditorWindow
     float myFloat = 1.23f;
 
     // Add menu item named "My Window" to the Window menu
-    [MenuItem("Tool/Dont Use Test- Action Editor Test")]
+    //[MenuItem("Tool/Dont Use Test- Action Editor Test")]
     public static void ShowWindow()
     {
         //Show existing window instance. If one doesn't exist, make one.
