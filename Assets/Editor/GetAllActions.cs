@@ -6,10 +6,13 @@ using UnityEditor;
 
 namespace SilverTrain.ActionEditor
 {
+    /// <summary>
+    /// Class to get the different Scriptable Objects around the project
+    /// </summary>
     public class GetAllActions : MonoBehaviour
     {
         [SerializeField]
-        private InputActions[] inputActions;
+        InputActions[] inputActions;
         
         
         void Start()

@@ -5,12 +5,16 @@ using UnityEditor;
 
 namespace SilverTrain.ActionEditor
 {
+    /// <summary>
+    /// Window to generate a new Action Press Scriptable Object
+    /// It stores the action on "SilverbackResources" folder
+    /// </summary>
     public class GenerateActionPress : EditorWindow
     {
         #region Private Variables
-        private SerializedObject m_serializedObject;
+        SerializedObject m_serializedObject;
 
-        private SerializedProperty m_serializedProperty;
+        SerializedProperty m_serializedProperty;
 
         #endregion
 

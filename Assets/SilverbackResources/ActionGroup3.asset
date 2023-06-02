@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db3e8dd857dfe14b96e227e31cd3897, type: 3}
   m_Name: ActionGroup3
   m_EditorClassIdentifier: 
-  m_actionName: NewGroup2
-  m_pressActions: []
-  m_moveActions: []
+  m_actionName: Group Actions Red Cube
+  m_pressActions:
+  - {fileID: 11400000, guid: b51b5634337506c448a4be32810d686f, type: 2}
+  m_moveActions:
+  - {fileID: 11400000, guid: bd77ebcaeef8e2b4eb94472e7fd9d66a, type: 2}

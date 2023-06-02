@@ -12,9 +12,9 @@ namespace SilverTrain.ActionEditor
     public class GenerateActionGroup : EditorWindow
     {
         #region Private Variables
-        private SerializedObject m_serializedObject;
+        SerializedObject m_serializedObject;
         
-        private SerializedProperty m_serializedProperty;
+        SerializedProperty m_serializedProperty;
         #endregion
 
         #region Protected Variables

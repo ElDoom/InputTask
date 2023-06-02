@@ -56,24 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\v01\InputActionEditor.cs" />
     <Compile Include="Assets\Editor\GetAllActions.cs" />
-    <Compile Include="Assets\Editor\v01\ActionEditor.cs" />
     <Compile Include="Assets\Editor\GenerateAction.cs" />
-    <Compile Include="Assets\Editor\v01\InputSearchDrawer.cs" />
     <Compile Include="Assets\Editor\GenerateActionGroup.cs" />
     <Compile Include="Assets\Editor\GenerateActionMove.cs" />
     <Compile Include="Assets\Editor\EditorWindowActions.cs" />
-    <Compile Include="Assets\Editor\v01\InputSearchPopup.cs" />
-    <Compile Include="Assets\Editor\v01\ActionWindow.cs" />
     <Compile Include="Assets\Editor\GenerateActionPress.cs" />
-    <Compile Include="Assets\Editor\OverlayInputEditor.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Editor\v01\InputActionEditor.uxml" />
-    <None Include="Assets\Editor\v01\ActionEditorWindowStyle.uss" />
-    <None Include="Assets\Editor\v01\InputActionEditor.uss" />
-    <None Include="Assets\Editor\v01\Action.uxml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

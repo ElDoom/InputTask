@@ -48,7 +48,6 @@ namespace SilverTrain.ActionEditor
         {
             actionsToEdit = GetActionInstances<InputActions>();
             m_serializedObject = new SerializedObject(actionsToEdit[0]);
-
             pressActionsToEdit = GetPressInstances<InputActionPress>();
             
 
@@ -84,7 +83,7 @@ namespace SilverTrain.ActionEditor
                 EditorGUILayout.LabelField("Select an item from the list");
             }
             EditorGUILayout.LabelField("Edit Actions");
-            /*test*/
+            
             pressActionsToEdit = GetPressInstances<InputActionPress>();
             m_serializedObject = new SerializedObject(pressActionsToEdit[0]);
 
@@ -111,7 +110,7 @@ namespace SilverTrain.ActionEditor
             {
                 EditorGUILayout.LabelField("Select an item from the list");
             }
-            EditorGUILayout.LabelField("Processors...");
+            EditorGUILayout.LabelField("Processors and Interactions");
 
             EditorGUILayout.EndVertical();
 
@@ -136,6 +135,8 @@ namespace SilverTrain.ActionEditor
 
         protected void DrawSliderBar(InputActions[] prop)
         {
+            
+            
             foreach (InputActions p in prop)
             {
                 if (GUILayout.Button(p.ActionName))
@@ -175,6 +176,8 @@ namespace SilverTrain.ActionEditor
                 newActionWindow.newInputActionPress = newActionPress;
 
             }
+
+
         }
 
         protected void DrawSliderBarMove(InputActionMove[] prop)

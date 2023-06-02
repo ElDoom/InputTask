@@ -15,31 +15,15 @@ namespace SilverTrain.ActionEditor
     {
         #region Private Variables
         [SerializeField]
-        private string m_actionName;
+        string m_actionName;
         
         [SerializeField]
-        private InputActionPress[] m_pressActions;
+        InputActionPress[] m_pressActions;
 
         [SerializeField]
-        private InputActionMove[] m_moveActions;
+        InputActionMove[] m_moveActions;
 
-        private Vector2 data;
-        #endregion
-
-        #region Event Methods
-        public delegate void onInputChanged();
-
-        public event onInputChanged InputChanged;
-
-        private void PressEvent() => InputChanged?.Invoke();
-        #endregion
-
-        #region Utility Methods
-        public string ActionName { get => m_actionName; set => m_actionName = value; }
-
-        public InputActionPress[] PressActions { get => m_pressActions; set => m_pressActions = value; }
-
-        public InputActionMove[] MoveActions { get => m_moveActions; set => m_moveActions = value; }
+        Vector2 data = Vector2.zero;
         #endregion
 
         #region Main Methods
@@ -62,11 +46,34 @@ namespace SilverTrain.ActionEditor
         {
             foreach (InputActionMove m in m_moveActions)
             {
-                //m_onAction.Invoke();
-                data = m.OnMove();
+                data = m.OnMove(); 
             }
-            return data;
+            //MoveEvent();
+            return data; 
         }
         #endregion
+
+        #region Event Methods
+        public delegate void onInputChanged();
+
+        public event onInputChanged InputChanged;
+
+        public delegate void onInputMove(Vector2 data);
+
+        public event onInputMove InputMoveChanged;
+
+        private void PressEvent() => InputChanged?.Invoke();
+        private void MoveEvent() => InputMoveChanged(data);
+        #endregion
+
+        #region Utility Methods
+        public string ActionName { get => m_actionName; set => m_actionName = value; }
+
+        public InputActionPress[] PressActions { get => m_pressActions; set => m_pressActions = value; }
+
+        public InputActionMove[] MoveActions { get => m_moveActions; set => m_moveActions = value; }
+        #endregion
+
+
     }
 }

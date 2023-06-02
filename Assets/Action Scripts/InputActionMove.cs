@@ -12,52 +12,49 @@ namespace SilverTrain.ActionEditor
     public class InputActionMove : ScriptableObject
     {
         #region Private Variables
-        private Vector2 m_data;
+        Vector2 m_data;
         [SerializeField]
-        private string m_actionName;
+        string m_actionName;
 
         [Header("Processors")]
         [SerializeField]
-        private bool m_InvertX= false;
+        bool m_InvertX= false;
         [SerializeField]
-        private bool m_InvertY = false;
+        bool m_InvertY = false;
         [SerializeField]
-        private bool m_Normalize = false;
+        bool m_Normalize = false;
         [SerializeField]
-        private bool m_Scale = false;
+        bool m_Scale = false;
         [SerializeField]
-        private bool m_DeadZone = false;
+        bool m_DeadZone = false;
 
         [Header("Scale Values")]
         [SerializeField]
-        private Vector2 m_ScaleFactor = Vector2.one;
+        Vector2 m_ScaleFactor = Vector2.one;
 
         [Header("Dead Zone Values")]
         [SerializeField]
-        private Vector2 m_DeadZoneValuesMin = Vector2.zero;
+        Vector2 m_DeadZoneValuesMin = Vector2.zero;
         [SerializeField]
-        private Vector2 m_DeadZoneValuesMax = Vector2.one;
+        Vector2 m_DeadZoneValuesMax = Vector2.one;
 
-        #endregion
 
-        #region Utility Methods
-        public Vector2 Data { get => m_data; set => m_data = value; }
-
-        public string ActionName { get => m_actionName; set => m_actionName = value; }
+        const string HORIZONTAL = "Horizontal";
+        const string VERTICAL = "Vertical";
         #endregion
 
         #region Main Methods
         public Vector2 OnMove()
         {
-            m_data.x = Input.GetAxis("Horizontal");
-            m_data.y = Input.GetAxis("Vertical");
+            m_data.x = Input.GetAxis(HORIZONTAL);
+            m_data.y = Input.GetAxis(VERTICAL);
             if (m_InvertX)
             {
-                m_data.x = Input.GetAxis("Horizontal") * -1;
+                m_data.x = Input.GetAxis(HORIZONTAL) * -1;
             }
             if (m_InvertY)
             {
-                m_data.y = Input.GetAxis("Vertical") * -1;
+                m_data.y = Input.GetAxis(VERTICAL) * -1;
             }
             if (m_Normalize)
             {
@@ -77,6 +74,12 @@ namespace SilverTrain.ActionEditor
             }
             return m_data;
         }
+        #endregion
+
+        #region Utility Methods
+        public Vector2 Data { get => m_data; set => m_data = value; }
+
+        public string ActionName { get => m_actionName; set => m_actionName = value; }
         #endregion
     }
 }

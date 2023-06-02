@@ -5,12 +5,15 @@ using UnityEditor;
 
 namespace SilverTrain.ActionEditor
 {
+    /// <summary>
+    /// A window to genetate actions
+    /// </summary>
     public class GenerateAction : EditorWindow
     {
         #region Private Variables
-        private SerializedObject m_serializedObject;
+        SerializedObject m_serializedObject;
 
-        private SerializedProperty m_serializedProperty;
+        SerializedProperty m_serializedProperty;
 
         #endregion
 

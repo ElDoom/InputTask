@@ -59,18 +59,12 @@
     <Compile Include="Assets\Action Scripts\InputActionMove.cs" />
     <Compile Include="Assets\Action Scripts\InputActionPress.cs" />
     <Compile Include="Assets\Action Scripts\XRInput.cs" />
-    <Compile Include="Assets\CapsuleExample.cs" />
-    <Compile Include="Assets\InputSearchUsageExample.cs" />
-    <Compile Include="Assets\Action Scripts\V01\Move.cs" />
-    <Compile Include="Assets\CubeControllerBlue.cs" />
-    <Compile Include="Assets\Action.cs" />
-    <Compile Include="Assets\Action Scripts\V01\Press.cs" />
+    <Compile Include="Assets\CubeControllers\CapsuleExample.cs" />
+    <Compile Include="Assets\CubeControllers\CubeControllerBlue.cs" />
     <Compile Include="Assets\Action Scripts\InputActions.cs" />
-    <Compile Include="Assets\InputSearchAttribute.cs" />
-    <Compile Include="Assets\Action Scripts\V01\ActionGroup.cs" />
-    <Compile Include="Assets\CubeController.cs" />
-    <Compile Include="Assets\Action Scripts\V01\CompositeAction.cs" />
-    <Compile Include="Assets\XRPlatformControllerSetup.cs" />
+    <Compile Include="Assets\CubeControllers\CubeController.cs" />
+    <Compile Include="Assets\XR\XRPlatformControllerSetup.cs" />
+    <Compile Include="Assets\Action Scripts\OverlayInputData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
