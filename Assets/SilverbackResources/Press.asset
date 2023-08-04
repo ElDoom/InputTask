@@ -16,12 +16,12 @@ MonoBehaviour:
   m_keyBinds: 200000001a0100001b0100004a010000
   m_Invert: 0
   m_onKey: 0
-  m_onKeyDown: 1
+  m_onKeyDown: 0
   m_onKeyUp: 0
   m_hold: 0
   m_holdTime: 0.4
   m_tap: 0
   m_maxTapTime: 0.5
-  m_multiTap: 0
+  m_multiTap: 1
   m_tapCount: 2
   m_maxTapSpacing: 0.4

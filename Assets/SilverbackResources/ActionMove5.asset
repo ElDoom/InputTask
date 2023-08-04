@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e289fdaed9a290a43bf35e8b45f3b2cb, type: 3}
+  m_Name: ActionMove5
+  m_EditorClassIdentifier: 
+  m_actionName: Movement Player 1
+  m_InvertX: 0
+  m_InvertY: 0
+  m_Normalize: 0
+  m_Scale: 0
+  m_DeadZone: 0
+  m_ScaleFactor: {x: 1, y: 1}
+  m_DeadZoneValuesMin: {x: 0, y: 0}
+  m_DeadZoneValuesMax: {x: 1, y: 1}
